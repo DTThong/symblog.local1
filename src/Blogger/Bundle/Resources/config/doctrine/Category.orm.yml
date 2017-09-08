@@ -1,0 +1,20 @@
+Blogger\Bundle\Entity\Category:
+    type: entity
+    table: null
+    repositoryClass: Blogger\Bundle\Repository\CategoryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
+
+    oneToMany:
+        blogs:
+            targetEntity: Blog
+            mappedBy: category

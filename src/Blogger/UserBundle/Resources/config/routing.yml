@@ -1,0 +1,15 @@
+home_login:
+    path:     /login
+    defaults: { _controller: BloggerUserBundle:User:login }
+   
+blog_show:
+    path:     /show 
+    defaults: { _controller: BloggerUserBundle:User:show }
+    
+blog_logout:
+    path:     /logout
+    defaults: { _controller: BloggerUserBundle:User:logout }
+    
+#blogger_user_login:
+#    path:     /login/check
+#    defaults: { _controller: BloggerUserBundle:User:check }

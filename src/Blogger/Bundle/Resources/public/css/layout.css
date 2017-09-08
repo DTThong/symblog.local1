@@ -1,0 +1,50 @@
+*{
+			margin: auto;
+			padding: auto;
+		}
+		#header{
+			height: 120px;
+			line-height: 120px;
+			background-color: orange;
+		}
+		#menu{
+                        text-align: center;
+			height: 35px;
+			line-height: 35px;
+			background-color: Gainsboro ;
+		}
+		#menu ul li{
+			float:left;
+			width:30%;
+			list-style-type:none;
+		}
+		#menu ul li a{
+			text-decoration: none;
+			font-size:20px;
+		}
+		#body{
+			height: 800px;
+		}
+		#left{
+			height: 800px;
+			width: 21%;
+			background-color: DarkGray ;
+			float: left;
+		}
+		#bet{
+			height: 800px;
+			width: 65%;
+			background-color: white;
+			float: left;
+                        text-align: left;
+                        padding-left: 20px;
+                }
+		#right{
+			height: 800px;
+			background-color: Cornsilk ;
+		}
+		#footer{
+                        text-align: center;
+			height: 30px;
+			background-color: Gainsboro ;
+		}

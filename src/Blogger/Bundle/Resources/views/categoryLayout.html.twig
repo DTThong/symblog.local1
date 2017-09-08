@@ -1,0 +1,46 @@
+<html>
+<head>
+
+        <meta charset="UTF-8">
+        <title>{% block title %}Test Application{% endblock %}</title>
+       
+        {% block stylesheets %}
+            {% stylesheets '@BloggerBundle/Resources/public/css/*' %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+        
+        {% block javascripts %}
+            {% javascripts '@BloggerBundle/Resources/public/css/*' %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+        
+</head>
+<body>
+	<div id="header">
+            {% block logo %}{% endblock %}
+	</div>
+	<div id="menu">
+            
+            {% block menu_vn %}
+            {% endblock  %}
+            
+	</div>
+	<div id="body">
+		<div id="left"></div>
+		<div id="bet">
+                    
+                        {% block body %}
+                             {% block form1 %}
+                             {% endblock %}
+                        {% endblock %}
+                                      
+		</div>
+		<div id="right"></div>
+	</div>
+	<div id="footer">
+          
+	</div>
+</body>
+</html>

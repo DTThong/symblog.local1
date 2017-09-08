@@ -1,0 +1,15 @@
+{% extends 'BloggerBundle::layout.html.twig' %}
+
+{% block form1 %}
+    
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        Blog
+        {{ form_row(form.name, {'label': 'Name1'}) }}
+        {{ form_row(form.sex, {'label': 'Sex1'}) }}
+      
+        {{ form_row(form.submit, { 'label': 'Submit' }) }}    
+        {{ form_row(form.reset, { 'label': 'Reset' }) }}  
+
+    {{ form_end(form) }}
+    
+{% endblock %}

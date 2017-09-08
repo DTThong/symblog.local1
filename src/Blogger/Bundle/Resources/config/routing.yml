@@ -1,0 +1,43 @@
+#Blog
+
+blogger_homepage:
+    path:     /list
+    defaults: { _controller: BloggerBundle:Blog:list }
+
+blog_admin:
+    path:     /admin
+    defaults: { _controller: BloggerBundle:Blog:admin }
+    
+blog_add:
+    path:     /add
+    defaults: { _controller: BloggerBundle:Blog:add }
+    
+BloggerBundle_blog_show:
+    path:     /{id}
+    defaults: { _controller: BloggerBundle:Blog:show }
+
+blog_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: BloggerBundle:Blog:edit }
+
+blog_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: BloggerBundle:Blog:delete }
+
+#Category
+
+category_home:
+    pattern:  /category/list
+    defaults: { _controller: BloggerBundle:Category:listCategory }
+    
+category_add:
+    pattern:  /category/add
+    defaults: { _controller: BloggerBundle:Category:addCategory }
+    
+category_edit:
+    pattern:  /category/{id}/edit
+    defaults: { _controller: BloggerBundle:Category:editCategory }
+    
+category_delete:
+    pattern:  /category/{id}/delete
+    defaults: { _controller: BloggerBundle:Category:deleteCategory }

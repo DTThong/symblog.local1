@@ -1,0 +1,62 @@
+security:
+    
+    # Chứng thực người dùng
+    providers:
+        our_db_provider:
+            entity:
+                class: BloggerUserBundle:User
+                
+    # Mã hóa mật khẩu
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        Blogger\UserBundle\Entity\User: plaintext
+    firewalls:
+        main:
+            pattern:    ^/
+            provider: our_db_provider
+            anonymous: true
+            form_login:
+                # người dùng được chuyển hướng khi họ cần đăng nhập
+                login_path: home_login
+                # Gửi biểu mẫu đăng nhập
+                check_path: home_login
+#               default_target_path: [tên trang chuyển đến]>> khi submit thành công  
+                default_target_path: blog_admin  
+            logout:
+                path: blog_logout
+                target: home_login
+                
+    access_control:
+#        login
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }   
+#        show list
+        - { path: ^/blogger/list, roles: ROLE_USER }
+#        access admin page
+        - { path: ^/blogger/admin, roles: ROLE_USER }        
+#        add
+        - { path: ^/blogger/add, roles: ROLE_USER }
+#        edit
+        - { path: ^/blogger/.*/edit, roles: ROLE_USER }
+#        delete
+        - { path: ^/blogger/.*/delete, roles: ROLE_USER }
+
+    role_hierarchy:        
+        ROLE_ADMIN: [ROLE_USER]        
+        ROLE_SUPERADMIN: [ROLE_ADMIN]
+        
+#        IS_AUTHENTICATED_ANONYMOUSLY: cho phép truy cập không cần login
+#        ROLE_USER: phải login mới thực thi được. Được gọi trong getRoles() >>User.php
+
+#   Yêu cầu:
+#     No Login: N/A
+#     Login Role User: List
+#     Login Role Admin: Add, Delete, Edit
+
+#   https://symfony.com/doc/current/security.html#security-secure-objects
+
+#   Phân cấp cho roles: ROLE_USER, ROLE_ADMIN
+#       Người dùng có vai trò ROLE_ADMIN cũng sẽ có vai trò ROLE_USER. 
+#       Vai trò ROLE_SUPERADMIN có ROLE_ADMIN. ROLE_USER (được thừa hưởng từ ROLE_ADMIN).
+
+#Category
+#   https://symfony.com/doc/2.8/doctrine/associations.html

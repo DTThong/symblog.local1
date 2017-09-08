@@ -1,0 +1,13 @@
+## src/AppBundle/Resources/config/validation.yml
+Blogger\Bundle\Entity\Blog:
+    properties:
+        name:
+            - NotBlank:
+                message: "Name should not be blank"
+
+        sex:
+            - NotBlank:
+                message: "Sex should not be blank"
+
+           
+        

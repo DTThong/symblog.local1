@@ -1,0 +1,52 @@
+{# src/Blogger/BlogBundle/Resouces/views/Default/index.html.twig #}
+{% extends 'BloggerBundle::layout.html.twig' %}
+
+{% block title %}{{"blog"}}{% endblock %}
+
+{% block logo %}
+    <h1>INFOMATION OF SUPER START</h1>
+{% endblock %}
+
+
+{% block menu_vn %}
+    <ul>
+        <li><a href="{{path('blogger_homepage')}}">Home</a></li>
+	<li><a href="#">Fan</a></li>
+	<li><a href="#">Follow</a></li>		
+    </ul>
+{% endblock  %}
+
+
+{% block body %}
+    
+{#    Login#}
+    <a href="{{path('home_login')}}">login</a>
+    
+{#    Logout#}    
+    <div id="add"><a class="editLink"  href="{{path('blog_logout')}}">Logout</a> </div></br>
+
+    <table border="1">
+        <tr>
+            <th> ID </th>            
+            <th> NAME </th>
+            <th> SEX </th>    
+           {# <th> EDIT </th>
+            <th> DELETE </th>#}
+        </tr>
+       
+    {% for blog in blogs %} 
+        <tr>
+            <td id="colId">{{ blog.id }}</td>
+
+            <td id="colName">{{ blog.name }}</td>    
+
+            <td id="colSex">{{ blog.sex }}</td>            
+            
+  
+        </tr>
+    {% endfor %} 
+         
+    </table>
+       
+
+{% endblock %}

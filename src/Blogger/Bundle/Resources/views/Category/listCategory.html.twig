@@ -1,0 +1,44 @@
+{# src/Blogger/BlogBundle/Resouces/views/Default/index.html.twig #}
+{% extends 'BloggerBundle::categoryLayout.html.twig' %}
+
+{% block title %}{{"category"}}{% endblock %}
+
+{% block logo %}
+    <h1>CATEGORY</h1>
+{% endblock %}
+
+
+{% block menu_vn %}
+    <ul>
+        <li><a href="#">Home</a></li>
+	<li><a href="#">Fan</a></li>
+	<li><a href="#">Follow</a></li>		
+    </ul>
+{% endblock  %}
+
+
+{% block body %}
+
+    <table border="1">
+        <tr>
+            <th> ID </th>            
+            <th> NAME </th>
+            <th> EDIT </th>
+            <th> DELETE </th>
+        </tr>
+       
+    {% for category in categorys %} 
+        <tr>
+            <td id="colId">{{ category.id }}</td>
+
+            <td id="colName">{{ category.name }}</td>  
+            
+            <td class="edit"><a class="editLink" href="{{path('category_edit', {'id':  category.id  })}}">Edit_hen</a></td> 
+            <td id="colDelete" class="edit"><a class="editLink" href="{{path('category_delete', {'id':  category.id  })}}">Delete_hen</a>
+        </tr>
+    {% endfor %} 
+         
+    </table>
+       
+
+{% endblock %}

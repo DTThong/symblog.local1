@@ -1,0 +1,14 @@
+{% extends 'BloggerBundle::categoryLayout.html.twig' %}
+
+{% block form1 %}
+    
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        Category
+        {{ form_row(form.name, {'label': 'Name'}) }}
+       
+        {{ form_row(form.submit, { 'label': 'Submit' }) }}    
+        {{ form_row(form.reset, { 'label': 'Reset' }) }}  
+
+    {{ form_end(form) }}
+    
+{% endblock %}

@@ -1,0 +1,23 @@
+{# src/Blogger/BlogBundle/Resouces/views/Blog/show.html.twig #}
+{% extends 'BloggerBundle::layout.html.twig' %}
+
+{% block title %}{{"blog"}}{% endblock %}
+
+{% block body %}
+    <article class="blog">
+        <div>
+            
+            NAME: {{ blog.name }}  <br/>
+            SEX:  {{ blog.sex }} 
+            
+        </div>
+    </article>
+            
+    <article class="category">
+        <div>
+            
+            NAME: {{ category.name }}  
+            
+        </div>
+    </article>
+{% endblock %}

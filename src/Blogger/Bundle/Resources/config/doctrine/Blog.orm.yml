@@ -1,0 +1,27 @@
+Blogger\Bundle\Entity\Blog:
+    type: entity
+    table: null
+    repositoryClass: Blogger\Bundle\Repository\BlogRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        sex:
+            type: string
+            length: 255
+
+    lifecycleCallbacks: {  }
+    
+    manyToOne:
+        category:
+            targetEntity: Category
+            inversedBy: blog
+            joinColumn:
+                name: category_id
+                referencedColumnName: id
